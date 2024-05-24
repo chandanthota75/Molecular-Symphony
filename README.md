@@ -2,6 +2,19 @@
 
 **Harmonizing clinical and genetic data to enhance the precision and efficiency of glioma diagnosis.**
 
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Key Objectives](#key-objectives)
+3. [Dataset Features](#dataset-features)
+4. [Project Setup](#project-setup)
+5. [Data Preprocessing Guide](#data-preprocessing-guide)
+6. [Training the Models](#training-the-models)
+7. [Evaluation Metrics](#evaluation-metrics)
+8. [The Results](#the-results)
+9. [Conclusion and Future Enhancement](#conclusion-and-future-enhancement)
+10. [Code Overview](#code-overview)
+
 ## Project Overview
 
 Gliomas are the most common primary tumors of the brain, classified as either Lower-Grade Gliomas (LGG) or Glioblastoma Multiforme (GBM) based on histological and imaging criteria. Accurate grading is essential for effective treatment planning and prognosis. While clinical factors play a significant role in diagnosis, molecular and genetic features provide critical insights that can improve accuracy. However, molecular tests are often expensive, necessitating an optimal selection of features to balance cost and performance.
@@ -244,3 +257,20 @@ Evaluating each model using these metrics to gain insights into their performanc
 
 ## The Results
 
+Here are the results of model evaluation:
+
+| Model                   | Accuracy      | Precision     | Recall        | F1 Score      |
+|-------------------------|---------------|---------------|---------------|---------------|
+| Logistic Regression     | 0.85795       | 0.85819       | 0.85795       | 0.85804       |
+| Decision Tree           | 0.99432       | 0.99439       | 0.99432       | 0.99432       |
+| Random Forest           | 0.95455       | 0.95798       | 0.95455       | 0.95421       |
+| Naïve Bayes             | 0.84659       | 0.84684       | 0.84659       | 0.84669       |
+| Support Vector Machines | 0.85795       | 0.86151       | 0.85795       | 0.85837       |
+| Gradient Boosted Trees | 0.99432       | 0.99439       | 0.99432       | 0.99432       |
+| Multilayer Perceptron   | 0.97159       | 0.97162       | 0.97159       | 0.97157       |
+
+These results demonstrate the performance of each model based on accuracy, precision, recall, and F1 score metrics.
+
+## Conclusion and future enhancement
+
+## Code Overview
