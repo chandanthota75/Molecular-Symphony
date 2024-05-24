@@ -190,5 +190,57 @@ Follow these steps to preprocess the data and select features for your model:
    - Finally, using vector and string assembler to assemble features into a single vector column.
    - Shuffle and Split the data into training and testing sets [80 : 20].
 
-## Building and training the models
+## Training the Models
+
+I have used the below machine and ensemble learning models to predict the LGG and GBM from the dataset.
+
+1. **Logistic Regression (LR)**:
+   - Using the Logistic Regression algorithm to train the model. 
+   - Configure parameters such as regularization and convergence tolerance as needed.
+
+2. **Decision Tree (DT)**:
+   - Training the Decision Tree model using the dataset.
+   - Specify parameters such as maximum depth and minimum instances per node.
+
+3. **Random Forest (RF)**:
+   - Training the Random Forest model by building multiple decision trees.
+   - Configure parameters such as the number of trees and maximum depth.
+
+4. **Naive Bayes (NB)**:
+   - Training the Naive Bayes classifier using the dataset.
+
+5. **Support Vector Classifier (SVC)**:
+   - Training the Support Vector Classifier using the dataset.
+   - Configure parameters such as the kernel type and regularization parameter.
+
+6. **Gradient Boosted Trees (GBT)**:
+   - Training the Gradient Boosted Trees model to build an ensemble of weak learners.
+   - Specify parameters such as the learning rate and maximum depth of trees.
+
+7. **Multilayer Perceptron (MLP)**:
+   - Training the Multilayer Perceptron model, a type of neural network.
+   - Configure parameters such as the number of layers, neurons per layer, and activation function.
+
+Ensure that you have preprocessed the data and selected relevant features before training the models.
+
+## Evaluation Metrics
+
+After training the models, evaluate their performance using the following metrics:
+
+1. **Accuracy**:
+   - Accuracy measures the ratio of correctly predicted instances to the total instances. It indicates the overall correctness of the model's predictions.
+
+2. **Precision**:
+   - Precision measures the ratio of correctly predicted positive observations to the total predicted positive observations. It indicates the accuracy of positive predictions.
+
+3. **Recall**:
+   - Recall (also known as sensitivity) measures the ratio of correctly predicted positive observations to the all observations in actual class. It indicates the model's ability to find all positive instances.
+
+4. **F1 Score**:
+   - F1 Score is the harmonic mean of precision and recall. It provides a balance between precision and recall, considering both false positives and false negatives.
+
+Evaluating each model using these metrics to gain insights into their performance and choosing the best-performing model for the task. Ensure to validate the results on both training and testing datasets to assess the model's generalization ability.
+
+
+## The Results
 
