@@ -6,14 +6,14 @@
 
 1. [Project Overview](#project-overview)
 2. [Key Objectives](#key-objectives)
-3. [Dataset Features](#dataset-features)
-4. [Project Setup](#project-setup)
-5. [Data Preprocessing Guide](#data-preprocessing-guide)
-6. [Training the Models](#training-the-models)
-7. [Evaluation Metrics](#evaluation-metrics)
-8. [The Results](#the-results)
-9. [Conclusion and Future Enhancement](#conclusion-and-future-enhancement)
-10. [Code Overview](#code-overview)
+3. [Code Files](#code-files)
+4. [Dataset Features](#dataset-features)
+5. [Project Setup](#project-setup)
+6. [Data Preprocessing Guide](#data-preprocessing-guide)
+7. [Training the Models](#training-the-models)
+8. [Evaluation Metrics](#evaluation-metrics)
+9. [The Results](#the-results)
+10. [Conclusion and Future Enhancement](#conclusion-and-future-enhancement)
 
 ## Project Overview
 
@@ -30,6 +30,45 @@ The **Molecular-Symphony** project aims to develop predictive models that determ
 5. **Model Development**: Build a variety of machine learning and ensemble learning models to predict glioma grades based on the selected features.
 6. **Model Evaluation**: Assess the performance of the developed models using metrics such as accuracy, precision, recall, and F1 score.
 
+## Code Files
+
+1. **[Main.scala](./src/main/scala/Main.scala)**:
+   Main entry point of the application, containing the code to orchestrate the entire pipeline including data loading, preprocessing, model training, evaluation, and reporting.
+
+2. **[DataFrameUtils.scala](./src/main/scala/DataFrameUtils.scala)**:
+   Provides utility functions for working with DataFrames, such as loading CSV data and preprocessing operations.
+
+3. **[DataLoader.scala](./src/main/scala/DataLoader.scala)**:
+   Defines a DataLoader class responsible for loading data into Spark DataFrames from data source.
+
+4. **[DataPreprocessing.scala](./src/main/scala/DataPreprocessing.scala)**:
+   Includes code for preprocessing the dataset, handling missing values, encoding categorical features, and selecting relevant features for model training.
+
+5. **[LRModel.scala](./src/main/scala/LRModel.scala)**:
+   Implements the Logistic Regression (LR) model for classification tasks.
+
+6. **[DTModel.scala](./src/main/scala/DTModel.scala)**:
+   Implements the Decision Tree (DT) model for classification tasks.
+
+7. **[RFModel.scala](./src/main/scala/RFModel.scala)**:
+    Implements the Random Forest (RF) model for classification tasks.
+
+8. **[NBModel.scala](./src/main/scala/NBModel.scala)**:
+    Implements the Naive Bayes (NB) model for classification tasks.
+
+9. **[SVCModel.scala](./src/main/scala/SVCModel.scala)**:
+    Implements the Support Vector Classifier (SVC) model for classification tasks.
+
+10. **[GBTModel.scala](./src/main/scala/GBTModel.scala)**:
+   Implements the Gradient Boosted Trees (GBT) model for classification tasks.
+
+11. **[MLPModel.scala](./src/main/scala/MLPModel.scala)**:
+   Implements the Multilayer Perceptron (MLP) model, a type of neural network, for classification tasks.
+
+12. **[ClassificationMetrics.scala](./src/main/scala/ClassificationMetrics.scala)**:
+   Contains code for calculating classification evaluation metrics such as accuracy, precision, recall, and F1 score.
+
+These files collectively form the Molecular Symphony project, which aims to predict glioma grades based on clinical and genetic features.
 
 ## Dataset Features
 
@@ -277,5 +316,3 @@ Here are the results of model evaluation:
 These results demonstrate the performance of each model based on accuracy, precision, recall, and F1 score metrics.
 
 ## Conclusion and future enhancement
-
-## Code Overview
