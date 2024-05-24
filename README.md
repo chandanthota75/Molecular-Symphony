@@ -259,6 +259,8 @@ Evaluating each model using these metrics to gain insights into their performanc
 
 Here are the results of model evaluation:
 
+<div style="text-align:center;">
+
 | Model                   | Accuracy      | Precision     | Recall        | F1 Score      |
 |-------------------------|---------------|---------------|---------------|---------------|
 | Logistic Regression     | 0.85795       | 0.85819       | 0.85795       | 0.85804       |
@@ -266,8 +268,11 @@ Here are the results of model evaluation:
 | Random Forest           | 0.95455       | 0.95798       | 0.95455       | 0.95421       |
 | Naïve Bayes             | 0.84659       | 0.84684       | 0.84659       | 0.84669       |
 | Support Vector Machines | 0.85795       | 0.86151       | 0.85795       | 0.85837       |
-| Gradient Boosted Trees | 0.99432       | 0.99439       | 0.99432       | 0.99432       |
+| Gradient Boosted Trees  | 0.99432       | 0.99439       | 0.99432       | 0.99432       |
 | Multilayer Perceptron   | 0.97159       | 0.97162       | 0.97159       | 0.97157       |
+
+</div>
+
 
 These results demonstrate the performance of each model based on accuracy, precision, recall, and F1 score metrics.
 
