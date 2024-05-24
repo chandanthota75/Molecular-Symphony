@@ -103,3 +103,91 @@ To set up the project environment, follow these steps:
 
 ## Data Preprocessing Guide
 
+Follow these steps to preprocess the data and select features for your model:
+
+1. **Loading Necessary Columns**:
+   - Use the `loadData` function to load the necessary columns from the dataset.
+
+   ```scala
+   def loadData(spark: SparkSession, filePath: String): DataFrame = {
+     logger.info(s"Loading data from: $filePath")
+     val data = loadCSV(spark, filePath)
+     logger.info("Removing columns: Project, Case_ID")
+     data.drop("Project", "Case_ID")
+   }
+   ```
+
+2. **Define Schema**:
+   - Defining the schmea for the dataframe to maintain data quality and ensure correct model training.
+   ```scala
+    private val schema: StructType = StructType(Array(
+        StructField("Gender", IntegerType, nullable = false),
+        StructField("Age_at_diagnosis", DoubleType, nullable = false),
+        StructField("Primary_Diagnosis", IntegerType, nullable = false),
+        StructField("Race", IntegerType, nullable = false),
+        StructField("IDH1", IntegerType, nullable = false),
+        StructField("TP53", IntegerType, nullable = false),
+        StructField("ATRX", IntegerType, nullable = false),
+        StructField("PTEN", IntegerType, nullable = false),
+        StructField("EGFR", IntegerType, nullable = false),
+        StructField("CIC", IntegerType, nullable = false),
+        StructField("MUC16", IntegerType, nullable = false),
+        StructField("PIK3CA", IntegerType, nullable = false),
+        StructField("NF1", IntegerType, nullable = false),
+        StructField("PIK3R1", IntegerType, nullable = false),
+        StructField("FUBP1", IntegerType, nullable = false),
+        StructField("RB1", IntegerType, nullable = false),
+        StructField("NOTCH1", IntegerType, nullable = false),
+        StructField("BCOR", IntegerType, nullable = false),
+        StructField("CSMD3", IntegerType, nullable = false),
+        StructField("SMARCA4", IntegerType, nullable = false),
+        StructField("GRIN2A", IntegerType, nullable = false),
+        StructField("IDH2", IntegerType, nullable = false),
+        StructField("FAT4", IntegerType, nullable = false),
+        StructField("PDGFRA", IntegerType, nullable = false),
+        StructField("Label", IntegerType, nullable = false)
+    ))
+   ```
+3. **Label Encoding**:
+   - Perform label encoding for all categorical columns to prepare the data for model training.
+   - Use mappings and UDFs to encode categorical values.
+
+   ```scala
+    val genderMapping = Map("Male" -> 0, "Female" -> 1)
+    val raceMapping = Map(
+      "white" -> 0,
+      "black or african american" -> 1,
+      "asian" -> 2,
+      "american indian or alaska native" -> 3,
+      "not reported" -> 4
+    )
+    val primaryDiagnosisMapping = Map(
+      "Astrocytoma, anaplastic" -> 0,
+      "Astrocytoma, NOS" -> 1,
+      "Glioblastoma" -> 2,
+      "Mixed glioma" -> 3,
+      "Oligodendroglioma, anaplastic" -> 4,
+      "Oligodendroglioma, NOS" -> 5
+    )
+    val mutationMapping = Map("NOT_MUTATED" -> 0, "MUTATED" -> 1)
+    val gradeMapping = Map("LGG" -> 0, "GBM" -> 1)
+   ```
+
+4. **Feature Selection**:
+   - Perform feature selection using the UnivariateFeatureSelector class to get features for training the model
+   ```scala
+    val selector = new UnivariateFeatureSelector()
+    .setSelectionMode("numTopFeatures")
+    .setSelectionThreshold(16)
+    .setFeatureType("categorical")
+    .setLabelType("categorical")
+    .setFeaturesCol("features")
+    .setLabelCol("Label")
+    .setOutputCol("selectedFeatures")
+   ```
+
+5. **Vector Assembler and Train-Test Split**:
+   - Finally, use vector assembler to assemble features into a single vector column.
+   - Shuffle and Split the data into training and testing sets [80 : 20].
+
+## Building and training the models
