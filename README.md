@@ -298,7 +298,6 @@ Evaluating each model using these metrics to gain insights into their performanc
 
 Here are the results of model evaluation:
 
-<div style="text-align:center;">
 
 | Model                   | Accuracy      | Precision     | Recall        | F1 Score      |
 |-------------------------|---------------|---------------|---------------|---------------|
@@ -310,9 +309,25 @@ Here are the results of model evaluation:
 | Gradient Boosted Trees  | 0.99432       | 0.99439       | 0.99432       | 0.99432       |
 | Multilayer Perceptron   | 0.97159       | 0.97162       | 0.97159       | 0.97157       |
 
-</div>
-
-
 These results demonstrate the performance of each model based on accuracy, precision, recall, and F1 score metrics.
 
 ## Conclusion and future enhancement
+
+This project demonstrates the potential of Scala in machine learning and ensemble learning tasks. By leveraging Spark and Scala's expressive syntax and powerful libraries, we have developed and evaluated multiple classification models for predicting glioma grades based on clinical and genetic features.
+
+The results showcase the performance of various models in terms of accuracy, precision, recall, and F1 score. Among the models evaluated, the **Decision Tree** and **Gradient Boosted Trees** models stand out with nearly perfect accuracy, precision, recall, and F1 score. These models demonstrate the ability to effectively capture complex relationships within the dataset and make accurate predictions.
+
+While the current models provide impressive results, there are several avenues for future enhancement:
+
+1. **Deep Learning Integration**: Integrating deep learning techniques such as convolutional neural networks (CNNs) or recurrent neural networks (RNNs) can potentially further improve model accuracy. Deep learning models excel at capturing intricate patterns and relationships in data, which may lead to higher predictive performance.
+
+2. **Hyperparameter Tuning**: Fine-tuning the hyperparameters of existing models could potentially improve their performance. Techniques such as grid search or random search can be employed to systematically explore the hyperparameter space and identify optimal configurations.
+
+3. **Feature Engineering**: Experimenting with different feature engineering techniques, such as polynomial features, feature scaling, or feature selection algorithms, can help extract more relevant information from the dataset and enhance model performance.
+
+4. **Ensemble Learning Strategies**: Exploring advanced ensemble learning strategies, such as stacking or gradient boosting with different base learners, can potentially yield even better results. Ensemble methods combine the predictions of multiple models to produce a more robust and accurate final prediction.
+
+5. **Data Augmentation**: Augmenting the dataset with synthetic samples or additional features derived from domain knowledge can potentially improve model generalization and robustness.
+
+By incorporating these enhancements, we can further enhance the accuracy and reliability of the predictive models, ultimately improving the diagnosis and treatment of gliomas.
+
