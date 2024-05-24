@@ -18,13 +18,9 @@ The **Molecular-Symphony** project aims to develop predictive models that determ
 6. **Model Evaluation**: Assess the performance of the developed models using metrics such as accuracy, precision, recall, and F1 score.
 
 
-## Dataset
-
-The dataset used in this project is "Glioma Grading Clinical and Mutation Features," comprising data from the TCGA-LGG and TCGA-GBM brain glioma projects. It includes the most frequently mutated 20 genes and 3 critical clinical features relevant to glioma grading.
-
-[Link to Dataset](https://archive.ics.uci.edu/dataset/759/glioma+grading+clinical+and+mutation+features+dataset)
-
 ## Dataset Features
+
+The dataset used in this project is "Glioma Grading Clinical and Mutation Features," comprising data from the TCGA-LGG and TCGA-GBM brain glioma projects. It includes the most frequently mutated 20 genes and 3 critical clinical features relevant to glioma grading. [Link to Dataset](https://archive.ics.uci.edu/dataset/759/glioma+grading+clinical+and+mutation+features+dataset)
 
 | Variable Name   | Role      | Type       | Description                                               | Values                        |
 |-----------------|-----------|------------|-----------------------------------------------------------|-------------------------------|
@@ -52,3 +48,54 @@ The dataset used in this project is "Glioma Grading Clinical and Mutation Featur
 | IDH2            | Feature   | Categorical| Isocitrate Dehydrogenase (NADP(+)) 2                     | NOT_MUTATED, MUTATED          |
 | FAT4            | Feature   | Categorical| FAT Atypical Cadherin 4                                   | NOT_MUTATED, MUTATED          |
 | PDGFRA          | Feature   | Categorical| Platelet-Derived Growth Factor Receptor Alpha            | NOT_MUTATED, MUTATED          |
+
+
+## Project Setup
+
+To set up the project environment, follow these steps:
+
+1. **IDE**: The project is developed using IntelliJ IDEA Community Edition. Ensure you have IntelliJ IDEA installed on your system.
+
+2. **SBT and Scala Versions**:
+   - The project is built using SBT version 1.9.7 and Scala version 2.13.12.
+   - Make sure you have SBT (Simple Build Tool) version 1.9.7 and Scala version 2.13.12 installed on your machine.
+   - Additionally, ensure you have JDK 8 installed.
+
+3. **Build.sbt Configuration**:
+   - Below is the content of the `build.sbt` file:
+
+    ```scala
+    ThisBuild / version := "0.1.0-SNAPSHOT"
+
+    ThisBuild / scalaVersion := "2.13.12"
+
+    lazy val root = (project in file("."))
+    .settings(
+        // Project name and IDE package prefix
+        name := "MolecularSymphony"
+    )
+
+    // Define versions for Spark and Hadoop
+    val spark_version = "3.5.0"
+    val hadoop_version = "3.3.5"
+
+    // Define library dependencies
+    libraryDependencies ++= Seq(
+    // Spark dependencies
+    "org.apache.spark" %% "spark-core" % spark_version,
+    "org.apache.spark" %% "spark-sql" % spark_version,
+    "org.apache.spark" %% "spark-mllib" % spark_version,
+
+    // Hadoop dependencies
+    "org.apache.hadoop" % "hadoop-common" % hadoop_version,
+    "org.apache.hadoop" % "hadoop-client" % hadoop_version,
+    "org.apache.hadoop" % "hadoop-hdfs" % hadoop_version
+    )
+    ```
+
+4. **Dependency Management**:
+    - Ensure that the specified versions of Spark and Hadoop dependencies are compatible with your project requirements.
+    - SBT will automatically manage and download the specified dependencies when you build the project
+
+## Data Preprocessing Guide
+
