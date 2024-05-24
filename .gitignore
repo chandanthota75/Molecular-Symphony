@@ -1,0 +1,40 @@
+# Scala and SBT files
+target/
+project/target/
+project/project/
+.cache/
+lib_managed/
+src_managed/
+.idea/
+*.iml
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code files
+.vscode/
+
+# Log files
+*.log
+
+# Compiled class files
+*.class
+
+# Jar files
+*.jar
+
+# Scala-IDE specific files
+.scala_dependencies
+.worksheet
+
+# MacOS specific files
+.DS_Store
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
