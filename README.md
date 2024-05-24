@@ -187,7 +187,8 @@ Follow these steps to preprocess the data and select features for your model:
    ```
 
 5. **Vector Assembler and Train-Test Split**:
-   - Finally, use vector assembler to assemble features into a single vector column.
+   - Finally, using vector and string assembler to assemble features into a single vector column.
    - Shuffle and Split the data into training and testing sets [80 : 20].
 
 ## Building and training the models
+
