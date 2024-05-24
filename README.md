@@ -61,7 +61,11 @@ To set up the project environment, follow these steps:
    - Make sure you have SBT (Simple Build Tool) version 1.9.7 and Scala version 2.13.12 installed on your machine.
    - Additionally, ensure you have JDK 8 installed.
 
-3. **Build.sbt Configuration**:
+3. **Spark and Hadoop Versions**:
+   - For data processing and model building, Spark version 3.5.0 is required.
+   - Hadoop version 3.3.5 is needed for data loading and storage operations like svaing and trained models and processed data.
+
+4. **Build.sbt Configuration**:
    - Below is the content of the `build.sbt` file:
 
     ```scala
@@ -93,7 +97,7 @@ To set up the project environment, follow these steps:
     )
     ```
 
-4. **Dependency Management**:
+5. **Dependency Management**:
     - Ensure that the specified versions of Spark and Hadoop dependencies are compatible with your project requirements.
     - SBT will automatically manage and download the specified dependencies when you build the project
 
