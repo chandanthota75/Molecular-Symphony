@@ -10,6 +10,7 @@ src_managed/
 
 # IntelliJ IDEA files
 .idea/
+.bsp/
 *.iml
 *.ipr
 *.iws
