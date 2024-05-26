@@ -72,6 +72,9 @@ class RFModel {
         spark
       )
 
+      // Saving the Random Forest model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\RFModel\\predictions")
+
       // Saving the trained Random Forest model
       logger.info("Saving Random Forest model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\RFModel\\model")

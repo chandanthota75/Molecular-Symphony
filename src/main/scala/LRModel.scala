@@ -80,6 +80,9 @@ class LRModel {
         spark
       )
 
+      // Saving the Logistic Regression model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\LRModel\\predictions")
+
       // Saving the trained Logistic Regression model
       logger.info("Saving Logistic Regression model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\LRModel\\model")

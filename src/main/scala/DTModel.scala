@@ -64,6 +64,9 @@ class DTModel {
         spark
       )
 
+      // Saving the Decision Tree model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\DTModel\\predictions")
+
       // Saving the trained Decision Tree model
       logger.info("Saving Decision Tree model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\DTModel\\model")

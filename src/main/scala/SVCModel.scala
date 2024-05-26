@@ -74,6 +74,9 @@ class SVCModel {
         spark
       )
 
+      // Saving the Linear SVC model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\SVCModel\\predictions")
+
       // Saving the trained Linear SVC model
       logger.info("Saving Support Vector Machine model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\SVCModel\\model")

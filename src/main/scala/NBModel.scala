@@ -61,6 +61,9 @@ class NBModel {
         spark
       )
 
+      // Saving the Naive Bayes model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\NBModel\\predictions")
+
       // Saving the trained Naive Bayes model
       logger.info("Saving Naive Bayes model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\NBModel\\model")

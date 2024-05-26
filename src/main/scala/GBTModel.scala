@@ -63,6 +63,9 @@ class GBTModel {
         spark
       )
 
+      // Saving the Gradient Boosting Trees model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\GBTModel\\predictions")
+
       // Saving the trained Gradient Boosting Trees model
       logger.info("Saving Gradient Boosting Trees model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\GBTModel\\model")

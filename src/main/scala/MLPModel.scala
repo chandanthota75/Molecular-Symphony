@@ -63,6 +63,9 @@ class MLPModel {
         spark
       )
 
+      // Saving the Multilayer Perceptron model predictions
+      DataFrameUtils.saveDataFrame(predictions.select(labelCol, "Prediction"), "C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\MLPModel\\predictions")
+
       // Saving the trained Multilayer Perceptron model
       logger.info("Saving Multilayer Perceptron model")
       model.save("C:\\Users\\chand\\Desktop\\MolecularSymphony\\Models\\MLPModel\\model")
